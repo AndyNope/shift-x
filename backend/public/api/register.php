@@ -24,7 +24,7 @@ if ($username === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($pa
 $stmt = pdo()->prepare('SELECT id FROM users WHERE email = :email OR employee_number = :employee_number LIMIT 1');
 $stmt->execute(['email' => $email, 'employee_number' => $employeeNumber]);
 if ($stmt->fetch()) {
-    json_response(['error' => 'E-Mail oder Mitarbeitendenummer existiert bereits.'], 409);
+    json_response(['error' => 'E-Mail oder Mitarbeiternummer existiert bereits.'], 409);
 }
 
 $insert = pdo()->prepare(

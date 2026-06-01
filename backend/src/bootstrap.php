@@ -60,9 +60,11 @@ function pdo(): PDO
 function ensure_session(): void
 {
     if (session_status() !== PHP_SESSION_ACTIVE) {
+        $https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
         session_start([
             'cookie_httponly' => true,
             'cookie_samesite' => 'Lax',
+            'cookie_secure' => $https,
             'use_strict_mode' => true,
         ]);
     }

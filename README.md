@@ -6,7 +6,7 @@ Minimales MVP für Schichttausch (React + Tailwind Frontend, PHP + MariaDB Backe
 
 1. Datenbank erstellen und Schema importieren:
    ```bash
-   mysql -u <user> -p <db> < /tmp/workspace/AndyNope/shift-x/backend/schema.sql
+   mysql -u <user> -p <db> < backend/schema.sql
    ```
 2. Umgebungsvariablen setzen (optional):
    - `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS`
@@ -14,7 +14,7 @@ Minimales MVP für Schichttausch (React + Tailwind Frontend, PHP + MariaDB Backe
    - `MAIL_FROM`
 3. App starten:
    ```bash
-   cd /tmp/workspace/AndyNope/shift-x/backend/public
+   cd backend/public
    php -S 127.0.0.1:8080
    ```
 4. Browser öffnen: `http://127.0.0.1:8080/index.html`
